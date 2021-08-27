@@ -54,8 +54,15 @@ footer p {
   margin-bottom: .25rem;
 }
 
-.site-header a {
+.site-header a  {
   color: white;
+  transition: ease-in-out color .15s;
+}
+
+#mostrarusuario  {
+  font-weight: bold;
+  font-style: italic;
+  color: rgb(223, 215, 215);
   transition: ease-in-out color .15s;
 }
 
