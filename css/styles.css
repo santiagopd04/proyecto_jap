@@ -64,6 +64,7 @@ footer p {
   font-style: italic;
   color: rgb(223, 215, 215);
   transition: ease-in-out color .15s;
+  border-radius: 9%;
 }
 
 .light-text {
