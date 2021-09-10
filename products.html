@@ -20,8 +20,16 @@
         <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-        <button class="bg-dark" class="img-thumbnail" id="mostrarusuario"></button>
+        <div class="dropdown text-center">
+          <button class="bg-dark" type="button" id="mostrarusuario" data-toggle="dropdown"><i class="fas fa-user-circle"></i></button>
+          <div class="dropdown-menu  dropdown-menu-center">
+            <a class="py-2 d-none d-md-inline-block" href="cart.html">Ir a Mi Carrito </a>
+            <a class="py-2 d-none d-md-inline-block" href="my-profile.html">Ir a Mi perfil</a>
+            <div class="dropdown-divider"></div>
+            <a class="py-2 d-none d-md-inline-block" href="index.html")>Salir</a>
+          </div>
+        </div>
+      </div>
       </div>
     </nav>
     <main role="main" class="pb-5">
@@ -31,17 +39,21 @@
       </div>
       <div class="container">
         <div class="row">
-            <div class="col text-right">
+              <div class="col text-right">
                 <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
-                    <label class="btn btn-light active" id="sortAsc" >
-                        <input type="radio" name="options" autocomplete="off" checked>A-Z
-                    </label>
-                    <label class="btn btn-light" id="sortDesc" >
-                        <input type="radio" name="options" autocomplete="off">Z-A
-                    </label>
-                    <label class="btn btn-light" id="sortByCount" >
-                        <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>#Ventas
-                    </label>
+                  <div class="col text-right font-weight-normal text-right my-2">Precio:
+                </div>
+                  <label class="btn btn-light" id="precioDes">
+                    <input type="radio" name="options" autocomplete="off" checked><i class="fas fa-arrow-down"></i> 
+                  </label>
+                  <label class="btn btn-light" id="precioAsc">
+                    <input type="radio" name="options" autocomplete="off"><i class="fas fa-arrow-up"></i> 
+                  </label>
+                  <div class="col text-right font-weight-normal text-right my-1">+Vend.:
+                  </div>
+                  <label class="btn btn-light" id="vendidosDes">
+                    <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>
+                  </label>
                 </div>
             </div>
         </div>
@@ -50,18 +62,18 @@
             <div class="col-md-6 col-sm-12 mb-1 container">
               <div class="row container p-0 m-0">
                 <div class="col">
-                  <p class="font-weight-normal text-right my-2">Cant.</p>
+                  <p class="font-weight-normal text-right my-2">Rengo precio:</p>
                 </div>
                 <div class="col">
-                  <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
+                  <input class="form-control" type="number" placeholder="min." id="precioMin">
                 </div>
                 <div class="col">
-                  <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
+                  <input class="form-control" type="number" placeholder="máx." id="precioMax">
                 </div>
                 <div class="col-3 p-0">
                   <div class="btn-group" role="group">
-                    <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
-                    <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
+                    <button class="btn btn-light btn-block" id="aplicarFiltro">Filtrar</button>
+                    <button class="btn btn-link btn-sm" id="limpiarFiltro">Limpiar</button>
                   </div>
                 </div>
               </div>

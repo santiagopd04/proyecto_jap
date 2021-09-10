@@ -16,7 +16,7 @@ var hideSpinner = function(){
 }
 
 var getJSONData = function(url){
-    var result = {};
+    result = {};
     showSpinner();
     return fetch(url)
     .then(response => {
@@ -45,5 +45,5 @@ var getJSONData = function(url){
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
   let usuario = localStorage.getItem('Usuario');
-  document.getElementById("mostrarusuario").innerHTML = "Usuario: " + usuario
+  document.getElementById("mostrarusuario").innerHTML += "   Hola " + usuario +"!"
 });
