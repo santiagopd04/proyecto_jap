@@ -148,3 +148,40 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+.star-fill {
+  color: yellow;
+}
+
+.star-unfill {
+  color: grey;
+}
+
+input[name="puntos"] {
+  display: none;
+}
+
+.puntuacion label {
+  color: grey;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.puntuacion {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+  margin-bottom: 0 !important;
+}
+
+.puntuacion label:hover,
+.puntuacion label:hover~label {
+  color: yellow;
+}
+
+input[name="puntos"]:checked~label {
+  color: yellow;
+}
+
+input[type="puntos"]:not(:checked){
+  color: grey;
+}

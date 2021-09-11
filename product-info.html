@@ -23,7 +23,7 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <div class="dropdown text-center">
-        <button class="bg-dark" type="button" id="mostrarusuario" data-toggle="dropdown"><i class="fas fa-user-circle"></i></button>
+        <button class="btn btn-dark btn-lg btn-block" type="button" id="mostrarusuario" data-toggle="dropdown"><i class="fas fa-user-circle"></i></button>
         <div class="dropdown-menu  dropdown-menu-center" >
           <a class="py-2 d-none d-md-inline-block" href="cart.html">Ir a Mi Carrito </a>
           <a class="py-2 d-none d-md-inline-block" href="my-profile.html">Ir a Mi perfil</a>
@@ -34,20 +34,127 @@
     </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 19/09/2021) y Entrega 4 (Fecha de entrega: 03/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
+  <div class="text-center p-0">
+    <h2 id="tituloProducto"></h2>
+    <p class="lead">Encontrarás aquí la información detallada de este producto.</p>
+    <hr class="my-3">
   </div>
+  <div class="container mt-5">
+ <div class="row">
+   <!-- Aca empieza el carousel -->
+        <div class="col-5">
+          <dl>
+            <dd>
+            <div>
+              <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="1200">
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                </ol>
+                <div id="galeria" class="carousel-inner">
+                  
+             
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Anterior</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Siguiente</span>
+                </a>
+             </div>
+          </dd>
+        </dl>
+         </div>
+  <!-- Aca termina el carousel -->
+      <div class="col-7">
+
+        <dl>
+          <dt>Este producto cuesta: </dt>
+          <dd>
+            <p id="precioProducto"></p>
+          </dd>
+
+          <dt>Descripción:</dt>
+          <dd>
+            <p id="descripcion"></p>
+          </dd>
+
+          <dt>Categoría: </dt>
+          <dd>
+            <a id="categoria" href="category-info.html"></a>
+          </dd>
+
+          <dt>Cantidad de ventas: </dt>
+          <dd>
+            <p id="cantidadVendidos"></p>
+          </dd>
+        </dl>
+      </div>
+  </div>
+  <hr class="my-3">
+    
+ <!-- Aca empieza el collapse con los comentarios -->
+ <dd>
+      <p>
+        <button class="btn btn-dark btn-lg btn-block" type="button" data-toggle="collapse" data-target="#collapseComentariosJson" aria-expanded="false" aria-controls="collapseExample">
+          ¿Aún con dudas? Revisa los <b>comentarios de otros compradores</b>!
+        </button>
+      </p>
+      <div class="collapse" id="collapseComentariosJson">
+        <div id="comentarios" class="card card-body">
+
+        </div>
+      </div>
+</dd>
+<!-- Aca termina el collapse con los comentarios -->
+<dd>
+    <p>
+      <button class="btn btn-dark btn-lg btn-block" type="button" data-toggle="collapse" data-target="#collapseNuevoComentario" aria-expanded="false" aria-controls="collapseExample">
+        ¿Has comprado este producto? <b>Deja tu opinión!</b>
+      </button>
+    </p>
+    <div class="collapse" id="collapseNuevoComentario">
+      <div id="agregarComentarios" class="card card-body">
+           <!-- Aqui empieza lo de las estrellitas para mandar el comentario -->
+    <div>Elije tu puntuación
+      <span class="puntuacion">
+      <input id="puntos1" class="estrella" type="radio" name="puntos" value="5">
+      <label for="puntos1">★</label>
+
+      <input id="puntos2" class="estrella" type="radio" name="puntos" value="4">
+      <label for="puntos2">★</label>
+
+      <input id="puntos3" class="estrella" type="radio" name="puntos" value="3">
+      <label for="puntos3">★</label>
+
+      <input id="puntos4" class="estrella" type="radio" name="puntos" value="2">
+      <label for="puntos4">★</label>
+
+      <input id="puntos5" class="estrella" type="radio" name="puntos" value="1">
+      <label for="puntos5">★</label>
+    </span></div>
+    
+<!-- Aqui termina lo de las estrellitas para mandar el comentario -->
+      <textarea class="form-control" id="nuevoComentario" rows="3"placeholder="Escribe aqui tu comentario..."></textarea>
+      <p></p>
+      <div class="text-center"><button class="btn btn-dark btn-secondary col-2" id="enviarComentario" ">Enviar Comentario</button></div>
+    </div>
+    </div>
+  </dd>
+  <dd>
+
+
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">
         <a href="#">Volver arriba</a>
       </p>
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2021</p>
       <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
     </div>
   </footer>
