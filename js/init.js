@@ -47,3 +47,8 @@ document.addEventListener("DOMContentLoaded", function(e){
   let usuario = localStorage.getItem('Usuario');
   document.getElementById("mostrarusuario").innerHTML += "   Hola " + usuario +"!"
 });
+
+document.getElementById(id="logout").addEventListener("click", function(e){
+  localStorage.clear();
+
+});

@@ -129,4 +129,5 @@ document.addEventListener("DOMContentLoaded", function(e){
         mostrarProductos(arrayProductos);
     })
 });
+
 obtenerProductos()

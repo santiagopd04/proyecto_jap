@@ -124,3 +124,11 @@ document.getElementById(id="enviarComentario").addEventListener("click", functio
     alert(`Gracias ` + localStorage.getItem('Usuario')+ ` por dejarnos tu comentario!`);
     document.getElementById("nuevoComentario").value = "";
 })
+
+document.addEventListener("DOMContentLoaded", function(e){
+
+
+obtenerProductos()
+
+
+})
