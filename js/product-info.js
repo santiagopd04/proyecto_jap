@@ -1,7 +1,8 @@
 //Defino array vacio de comentarios. Primero agrego los comentarios con el fecth.
 //Luego creo funcion que haga push del comentario nuevo a al array
-let comentarios = []
+let comentarios = [];
 let fechaActual = new Date();
+let productosRelacionados = [];
 
 //Defino funcion que hace el fetch del producto e inserta el contenido.
 //En el caso de las imagenes, itero con un for para agregar al carrousel que obtuve de bootstrap.
@@ -11,6 +12,7 @@ var obtenerDetalle = () => {
     fetch(PRODUCT_INFO_URL)
         .then(data => data.json())
         .then(details => {
+            productosRelacionados.push(details.relatedProducts);
             document.getElementById("tituloProducto").innerHTML = details.name;
             document.getElementById("precioProducto").innerHTML += details.currency + `  ` + details.cost;
             document.getElementById("descripcion").innerHTML = details.description;
@@ -40,6 +42,37 @@ var obtenerDetalle = () => {
 
 obtenerDetalle()
 
+console.log(productosRelacionados)
+//*****************************Bloque de productos relacionados/
+
+//Necesito funcion que haga el fetch para cada producto relacionado
+
+var obtenerProductosRelacionados = () => {
+    fetch(PRODUCTS_URL)
+        .then(data => data.json())
+        .then(products => {
+            let htmlContentToAppend = "";
+            let related = productosRelacionados[0]
+//tengo que agarrar el array para agregar solo los que me interesan
+         for(let i = 0; i < productosRelacionados[0].length; i++){
+            htmlContentToAppend += `
+            <div class="card mr-3" style="width: 18rem;">
+                      <img src="${products[related[i]].imgSrc} " class="card-img-top">
+            </div>
+        `;
+    }
+    
+    document.getElementById("related-products").innerHTML = htmlContentToAppend;
+    })
+
+}            
+       
+       
+obtenerProductosRelacionados()
+
+
+//**************************** */
+    
 //Funcion que hace el fetch para obtener el json con los comentarios
 //Llamo a la funcion que muestra los comentarios para agregarlos al html
 function obtenerComentarios(){
@@ -53,7 +86,6 @@ function obtenerComentarios(){
         }
     })
 }
-
 
 //Funcion que agrega los comentarios al HTML
 function mostrarComentarios(){
