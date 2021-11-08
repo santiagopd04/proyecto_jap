@@ -47,32 +47,36 @@
           <a class="py-2 d-none d-md-inline-block" href="cart.html">Ir a Mi Carrito </a><br>
           <a class="py-2 d-none d-md-inline-block" href="my-profile.html">Ir a Mi perfil</a>
           <div class="dropdown-divider"></div>
-          <a class="py-2 d-none d-md-inline-block" href="index.html" id="logout")>Salir</a>
+          <a class="py-2 d-none d-md-inline-block" href="index.html" id="logout">Salir</a>
         </div>
       </div>
     </div>
     </div>
   </nav>
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
+    <h2>Mi perfil</h2>
+    <hr class="my-3">
+    <div class="list-group-item list-group-item-action">
+      <div class="row">
+          <div class="col-2 d-flex align-items-center">
+            <i class="fas fa-user-circle iconoComentario"></i>
+          </div>
+          <div>
+            <form>
+              <br>
+              <label for="nombre"><h6 class="font-weight-bold margin-score">Nombre y apellido: </h6></label><input type="text" id="nombre" name="nombre"><br>
+              <label for="edad"><h6 class="font-weight-bold margin-score">Edad: </h6></label> <input type="number" id="edad"><br>
+              <label for="email"><h6 class="font-weight-bold margin-score">E-mail: </h6></label><input type="text" id="email" name="email"><br>
+                <label for="contacto"> <h6 class="font-weight-bold margin-score">Telefono de contacto: </h6></label><input type="text" id="contacto" name="contacto">
+            
+          </div>
   </div>
-  <footer class="text-muted bg-light">
-    <div class="container">
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-    </div>
-  </footer>
-  <div class="alert fade alert-success" role="alert" id="alertResult">
-    <span id="resultSpan"></span>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
+  <hr class="my-3">
+          <button class="btn btn-dark btn-lg btn-block" id="guardar" type="button" aria-expanded="false" aria-controls="collapseExample">
+            Guardar datos
+                    </button>
   </div>
+</form>
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
