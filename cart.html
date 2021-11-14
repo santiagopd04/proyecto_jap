@@ -61,14 +61,14 @@
   
   </div>
   <hr class="my-3">
-  <h5 class="mb-3">Datos de envio</h5>
-  <p>El costo de envio es en base al subtotal de su compra</p>
- <!-- Button trigger modal -->
-<button type="button" class="btn btn-dark btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Seleccionar forma de pago
-</button>
+  <h5 class="mb-3">Datos de envio:</h5>
+  <p>Direccion: <input id="direccion" type="text" size="46" placeholder="Calle y numero"></p>
+  <p>Esquina: <input id="esquina" type="text" size="20" placeholder="Calle">
+  Pais: <input id="pais" type="text" size="20" placeholder="Pais">
+</p>
 
 <!-- Modal -->
+
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -79,32 +79,32 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form id="formularioPago">
           <div>
-            <input type="radio" id="tarjeta" name="pago" checked>
+            <input type="radio" id="tarjeta" name="pago">
             <label for="tarjeta">Tarjeta</label><br>
-            Numero de tarjeta: <input type="text" maxlength="21" size="22" placeholder="XXXX-XXXXXXXXXXX-XXXX"><br>
-            Vencimiento: <input type="text" maxlength="7" size="8" placeholder="MM/AAAA"><br>
-            Codigo de seguridad: <input type="text" maxlength="3" size="4" placeholder="XXX">
+            Numero de tarjeta: <input id="TC" type="text" maxlength="21" size="22" placeholder="XXXX-XXXXXXXXXXX-XXXX" required=""><br>
+            Vencimiento: <input id="VencimientoTC" type="text" maxlength="7" size="8" placeholder="MM/AAAA"><br>
+            Codigo de seguridad: <input id="scTC" type="text" maxlength="3" size="4" placeholder="XXX">
             
           </div>
           <hr class="my-3">
           <div>
             <input type="radio" id="transferencia" name="pago">
             <label for="transferencia">Transferencia bancaria</label><br>
-            Cuenta bancaria: <input type="text" maxlength="19" size="20" placeholder="XXXX-XXXX-XXXX-XXXX">
+            Cuenta bancaria: <input id="cuenta" type="text" maxlength="19" size="20" placeholder="XXXX-XXXX-XXXX-XXXX">
           </div>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Volver</button>
-        <button type="button" class="btn btn-dark btn-primary" data-dismiss="modal">Confirmar</button>
+        <button id="guardar" type="submit" class="btn btn-dark btn-primary" data-dismiss="modal">Guardar</button>
       </div>
     </div>
   </div>
 </div>
-  <div class="row">
-  <div class="col-5">
+  <div>
+            <br><h5>Tipo de envio: </h5>
+            <p>El costo de envio es en base al subtotal de su compra</p>
             <div class="d-block my-3">
               <div class="custom-control custom-radio">
                 <input id="estandar" name="tipoEnvio" type="radio" class="custom-control-input" required="" checked="">
@@ -120,16 +120,25 @@
               </div>
             </div>
           </div>
-      <div class="col-5">
-        <h6 id=preciofinal>Precio final de su orden:</h6>
+    <br><h5>Pago: </h5>
+           <!-- Button trigger modal -->
+<button type="button" class="btn btn-dark btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Seleccionar forma de pago
+</button>
+
+<div id="confirmacionPago"></div>
+      <div>
+        <br><h5>Resumen de precio: </h5>
         <h4 id=""></h4>
         <h4>Envio: UYU <span id="gastoenvio"></span></h4>
         <h4>Total UYU <span id="totalorden"></span></h4>
       </div>
-    </div>
-    <button class="btn btn-dark btn-lg btn-block" type="button" aria-expanded="false" aria-controls="collapseExample">
+    <div id="error"></div>
+    <button id="finalizar" class="btn btn-dark btn-lg btn-block" type="button" aria-expanded="false" aria-controls="collapseExample">
 Finalizar compra
       </button>
+    </div>
+      <hr class="my-3">
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
